@@ -40,10 +40,8 @@ for row in csvfile:
 
 
 fig = plt.figure()
-
 plt.plot(dates, highs, c="red", alpha=0.5)
 plt.plot(dates, lows, c="blue", alpha=0.5)
-
 plt.fill_between(dates, highs, lows, facecolor="purple", alpha=0.2)
 
 plt.title("Daily and Low High Temperatures - 2018", fontsize=16)
@@ -51,7 +49,6 @@ plt.xlabel("")
 plt.ylabel("Temperature(F)", fontsize=12)
 plt.tick_params(axis="both", which="major", labelsize=12)
 
-fig.autofmt_xdate()
 
 # plt.show()
 
@@ -60,10 +57,14 @@ plt.plot(dates, highs, c="red")
 plt.title("Highs")
 
 plt.subplot(2, 1, 2)
+plt.plot(dates, highs, c="red")
 plt.plot(dates, lows, c="blue")
+plt.fill_between(dates, highs, lows, facecolor="purple", alpha=0.2)
 plt.title("Lows")
 
 plt.suptitle("Highs and Lows of [Stika], [Alaska]")
+
+fig.autofmt_xdate()
 
 plt.show()
 
